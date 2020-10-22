@@ -32,7 +32,7 @@ while flag!="end":
     if i == 61:
         flag = "end"
     turn_angle = i*(per_turn)
-    
+
     # t.pencolor(0,220,255) if (i<=sides/2) else t.pencolor(255,105,180) # half colors
     t.pencolor(0,220,255) if (i%2) else t.pencolor(255,105,180) # alternating colors
 
@@ -53,3 +53,5 @@ while flag!="end":
     t.right(turn_angle)
     t.forward(side_length)
     i += 1
+
+turtle.exitonclick()

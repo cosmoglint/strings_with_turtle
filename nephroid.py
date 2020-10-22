@@ -53,3 +53,6 @@ while flag!="end":
     t.right(turn_angle)
     t.forward(side_length)
     i += 1
+
+
+turtle.exitonclick()
