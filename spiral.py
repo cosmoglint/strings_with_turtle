@@ -62,7 +62,7 @@ dt.down()
 #     dt.forward(small_len)
 #     dt.down()
 
-for i in range(int(side_length),0,-5):
+for i in range(int(side_length),0,-1):
     dt.forward(i)
     dt.left(90)
     dt.forward(i)
