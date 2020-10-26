@@ -52,12 +52,16 @@ for i in range(sides):
     t.forward(side_length)
     t.right(90)
     mval = random.randrange(30,120)
-    t.color(mval,255,255)
+    t.color(mval*2,100,255)
     t.forward(mval)
     t.up()
     t.backward(mval)
     t.left(90)
     t.left(turn_angle)
     t.down()
+
+t.width(5)
+t.circle(in_radius)
+
 
 turtle.exitonclick()
