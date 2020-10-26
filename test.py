@@ -20,8 +20,6 @@ def radii(side):
     return radius
 print(radii(10))
 
-curad
-
 for i in range(1,4):
     t.up()
     t.goto( t.pos() + (0,-radii(each_side)) )
