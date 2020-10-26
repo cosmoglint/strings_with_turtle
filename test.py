@@ -10,33 +10,44 @@ t.speed(0)
 sides = 30
 turn_angle = 360/30
 
-side_length = 10   #side length of first circle
+
+in_radius = 20 #initial radius of first circle
+
+
+def slen_rad(radius):
+    side_len = radius * 2 * (math.sin(math.radians(180)/sides))
+    return side_len
+
+
+side_length = slen_rad(in_radius)   #side length of first circle
+
+
 each_side = side_length
 
-
-def radii(side):
-    global sides
-    radius = side/(2*math.sin(math.radians(180)/sides))
-    return radius
-print(radii(10))
-
-for i in range(1,4):
+for i in range(1,10):
+    t.width(i)
+    radius = in_radius + i*20
+    each_side = slen_rad(radius)
     t.up()
-    t.goto( t.pos() + (0,-radii(each_side)) )
-    each_side = side_length*i
+    t.sety(radius*(-1))
+    t.setx(-each_side/2)
     for j in range(sides):
-        if j==0:
+        t.width(0.23*j)
+        if (i%2==0):
             t.up()
+            t.forward(each_side)
             t.left(turn_angle)
-            t.forward(each_side/2 if (i%2==0) else -each_side/2)
             t.down()
-        t.up()
-        t.left(turn_angle)
-        t.forward(each_side)
-        t.down()
-        t.dot()
-    t.up()
-    t.goto( t.pos() + (0,radii(each_side)) )
+            t.dot()
+        else:
+            t.up()
+            t.forward(each_side/2)
+            t.down()
+            t.dot()
+            t.up()
+            t.forward(each_side/2)
+            t.left(turn_angle)
+            t.down()
 
 
 turtle.exitonclick()

@@ -3,12 +3,15 @@
 import turtle
 import math
 
+ts = turtle.getscreen()
+
+ts.colormode(255)
 
 t = turtle.Turtle()
 t.speed(0)
 
 sides = 30
-turn_angle = 360/30
+turn_angle = 360/sides
 
 
 in_radius = 60 #initial radius of first circle
