@@ -50,4 +50,37 @@ for i in range(1,10):
             t.down()
 
 
+
+
+
+def draw_triangle(counts,dir,turt):
+    each_move = 10
+    height = math.sqrt((10**2)-(5**2))
+    print(height)
+
+    for i in range(1,counts+1):
+        turt.sety(height)
+        x = i * (10)
+        for j in range(1,4):
+            turt.forward(x)
+            turt.left(120)
+        # turt.sety(yval)
+
+
+def draw_triangle(counts,dir,turt):
+
+    change = 20
+    turt.sety(change/2)
+    height = 0
+    side = height/ math.sin((120))
+    print(side)
+
+    for i in range(counts):
+        turt.sety(-height/2)
+        height += change
+        side = (height) / math.sin(math.degrees(120))
+        for j in range(1,4):
+            turt.forward(side)
+            turt.left(120)
+
 turtle.exitonclick()
